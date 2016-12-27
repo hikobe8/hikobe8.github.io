@@ -83,12 +83,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="坑点1"><a href="#坑点1" class="headerlink" title="坑点1"></a>坑点1</h2><p>###浮点数的比较<br>    1/3 == 1 - 2/3 //false<br>    并不是js的锅，而是浮点数运算会产生误差，直接比较有坑，比较差值要好点<br>    Math.abs(1/3 - (1 - 2/3)) &lt; 0.0000001 //true</p>
-
+        <h3 id="浮点数的比较"><a href="#浮点数的比较" class="headerlink" title="浮点数的比较"></a>浮点数的比较</h3><pre><code>1/3 == 1 - 2/3 //false
+并不是js的锅，而是浮点数运算会产生误差，直接比较有坑，比较差值要好点
+Math.abs(1/3 - (1 - 2/3)) &lt; 0.0000001 //true
+</code></pre><h3 id="创建数组的两种方法"><a href="#创建数组的两种方法" class="headerlink" title="创建数组的两种方法"></a>创建数组的两种方法</h3><pre><code>1. var arr = [&apos;Kobe&apos;, &apos;Lebron&apos;, &apos;Jordan&apos;];
+2. var arr = new Array(&apos;Kobe&apos;, &apos;Lebron&apos;, &apos;Jordan&apos;);
+建议使用第一种方式，方括号[]生成数组的可读性更高
+</code></pre><h3 id="规范化代码"><a href="#规范化代码" class="headerlink" title="规范化代码"></a>规范化代码</h3><pre><code>`&apos;use strict&apos;`
+在js文件开头开启strict模式，会检查变量是否为var声明，不支持strict模式的浏览器会将此语句当做一条普通语句执行
+</code></pre><h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h3><h4 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h4><pre><code>&apos;var name = &apos;Kobe&apos;&apos;;
+&apos;var age = 36;&apos;
+&apos;alert(`你好, ${name}, 你今年${age}岁了!`);&apos;
+</code></pre><h4 id="多行字符串"><a href="#多行字符串" class="headerlink" title="多行字符串"></a>多行字符串</h4><pre><code>&apos;`...`&apos; `英文输入法tab上面的键
+</code></pre><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h4 id="越界访问"><a href="#越界访问" class="headerlink" title="越界访问"></a>越界访问</h4><pre><code>在js中越界访问数据元素不会报错，也可以直接增加数组长度，但是并不推荐这种做法，都是确保访问的元素在数组内
+</code></pre><h4 id="数组的操作"><a href="#数组的操作" class="headerlink" title="数组的操作"></a>数组的操作</h4><pre><code>头部操作 
+&apos;unshift() //增加一个元素到头部&apos;
+&apos;shift() //从头部删除一个元素&apos;
+尾部操作
+&apos;push() //增加一个元素到尾部&apos;
+&apos;pop() //删除一个尾部元素&apos;
+</code></pre><h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><pre><code>&apos;var person={
+            &apos;name&apos;:&apos;person&apos;,
+            &apos;age&apos;: 36,
+            &apos;team&apos;: lakers
+            }&apos;
+</code></pre><h4 id="判断对象是否拥有此属性"><a href="#判断对象是否拥有此属性" class="headerlink" title="判断对象是否拥有此属性"></a>判断对象是否拥有此属性</h4><pre><code>in 判断不准确，会判断从父类继承来的属性
+hasOwnProperty 判断当前类中是否拥有此属性
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/26/Javascript学习日记(1)/" data-id="cix757l5f0000lciaxy84sf5y" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/12/26/Javascript学习日记(1)/" data-id="cix79yhh70001g8ia43w9rq8t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -133,7 +158,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/26/hello-world/" data-id="cix757l770001lciaond5y5jt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/12/26/hello-world/" data-id="cix79yhh20000g8ialrg1bu3t" class="article-share-link">Share</a>
       
       
     </footer>
